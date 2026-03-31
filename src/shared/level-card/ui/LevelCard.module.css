@@ -1,11 +1,23 @@
 .card {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   max-width: 200px;
   padding: 16px;
   border-radius: 16px;
   background-color: var(--code-bg);
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }
 
 .number {
@@ -20,4 +32,9 @@
   background-color: var(--code-bg);
   font-size: 48px;
   cursor: pointer;
+}
+
+.gender {
+  padding: 4px;
+  font-size: 20px;
 }
