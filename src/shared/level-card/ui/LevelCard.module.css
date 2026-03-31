@@ -2,12 +2,13 @@
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
-  padding: 8px 12px 32px;
+  padding: 16px 8px 32px;
   border-radius: 16px;
   background-color: var(--code-bg);
 
   @media screen and (max-width: 768px) {
     max-width: 164px;
+    padding: 8px 8px 32px;
   }
 }
 
@@ -31,6 +32,9 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   border: none;
   color: var(--text-h);
@@ -42,6 +46,9 @@
 .gender {
   grid-column: 1/4;
   justify-self: end;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   padding: 4px;
   font-size: 20px;
 }
