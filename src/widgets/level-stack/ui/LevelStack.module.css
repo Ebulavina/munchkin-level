@@ -5,12 +5,18 @@
   justify-content: center; 
   max-width: 404px;
   margin: 64px auto;
+
+  @media screen and (max-width: 768px) {
+    gap: 12px;
+    max-width: 360px;
+    margin: 32px auto;
+  }
 }
 
 .button {
   position: absolute;
   bottom: 24px;
-  right: 24px;
+  right: 26px;
   width: 64px;
   height: 64px;
   border: none;
@@ -18,5 +24,6 @@
   color: var(--text-h);
   background-color: var(--code-bg);
   font-size: 48px;
+  text-align: center;
   cursor: pointer;
 }
