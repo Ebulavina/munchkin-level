@@ -1,9 +1,21 @@
-import { LevelCard } from "@entities/level-card/ui/LevelCard";
+import { LevelCard } from '@shared/level-card/ui/LevelCard';
+import { useState } from 'react';
+import { MAX_LEVELS, MIN_LEVELS } from '../model/constants';
+import s from './LevelStack.module.css';
 
 export function LevelStack() {
-    return (
-        <div>
-            <LevelCard />
-        </div>
-    );
+  const [levels, setLevels] = useState<number>(MIN_LEVELS);
+
+  return (
+    <div className={s.stack}>
+      {Array.from({ length: levels }, (_, i) => (
+        <LevelCard key={i} />
+      ))}
+      {levels < MAX_LEVELS && (
+        <button className={s.button} onClick={() => setLevels(levels + 1)}>
+          {'\u002B'}
+        </button>
+      )}
+    </div>
+  );
 }
