@@ -1,19 +1,27 @@
-import { LevelCard } from '@shared/level-card/ui/LevelCard';
 import { useState } from 'react';
-import { MAX_LEVELS, MIN_LEVELS } from '../model/constants';
-import s from './LevelStack.module.css';
+import { LevelCard } from '@shared/level-card';
+import { MIN_LEVELS, MAX_LEVELS } from '../model/constants';
 import { PlusIcon } from '@shared/icons';
+import s from './LevelStack.module.css';
+
+const createLevel = () => ({ id: crypto.randomUUID() });
 
 export function LevelStack() {
-  const [levels, setLevels] = useState<number>(MIN_LEVELS);
+  const [levels, setLevels] = useState(() =>
+    Array.from({ length: MIN_LEVELS }, createLevel)
+  );
+
+  const addLevel = () => {
+    setLevels(prev => [...prev, createLevel()]);
+  };
 
   return (
     <div className={s.stack}>
-      {Array.from({ length: levels }, (_, i) => (
-        <LevelCard key={i} />
+      {levels.map(level => (
+        <LevelCard key={level.id} />
       ))}
-      {levels < MAX_LEVELS && (
-        <button className={s.button} onClick={() => setLevels(levels + 1)}>
+      {levels.length < MAX_LEVELS && (
+        <button className={s.button} onClick={addLevel}>
           <PlusIcon size={32} />
         </button>
       )}
