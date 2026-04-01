@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- shield -->
+  <path d="M32 4 C16 4 8 12 8 12 L8 30 C8 46 32 60 32 60 C32 60 56 46 56 30 L56 12 C56 12 48 4 32 4Z" fill="#f5edd8" stroke="#b8895a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- inner glow -->
+  <path d="M32 10 C20 10 14 16 14 16 L14 29 C14 42 32 54 32 54 C32 54 50 42 50 29 L50 16 C50 16 44 10 32 10Z" fill="#fbf6ea"/>
+  <!-- up arrow -->
+  <path d="M32 20 L22 34 L28 34 L28 44 L36 44 L36 34 L42 34 Z" fill="#aa3bff"/>
+</svg>

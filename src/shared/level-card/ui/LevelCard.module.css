@@ -1,41 +1,51 @@
 .card {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: center;
-  padding: 16px 8px 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 24px;
   border-radius: 16px;
   background-color: var(--code-bg);
   box-shadow:
     0 1px 2px rgb(0 0 0 / 0.04),
     0 4px 16px rgb(0 0 0 / 0.06),
     0 12px 32px rgb(0 0 0 / 0.04);
+  transition: box-shadow 200ms ease;
 
   &:hover {
     box-shadow:
       0 2px 4px rgb(0 0 0 / 0.06),
       0 8px 24px rgb(0 0 0 / 0.10),
       0 24px 48px rgb(0 0 0 / 0.06);
-    transition: box-shadow 200ms ease;
   }
 
   @media screen and (max-width: 768px) {
     max-width: 164px;
-    padding: 8px 8px 32px;
   }
 }
 
-/* .header {
+.header {
   display: flex;
-  justify-content: flex-end;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
-} */
+}
+
+.name {
+  width: 148px;
+  font-size: 10px;
+  color: var(--text-h);
+  opacity: 0.6;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+}
 
 .number {
   width: 56px;
@@ -53,13 +63,16 @@
   background-color: var(--code-bg);
   font-size: 48px;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .gender {
-  grid-column: 1/4;
-  justify-self: end;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   padding: 4px;
   font-size: 20px;
