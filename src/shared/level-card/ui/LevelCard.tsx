@@ -12,6 +12,7 @@ export function LevelCard() {
       <button
         className={`${s.button} ${s.gender}`}
         onClick={() => setIsMale(!isMale)}
+        aria-label={isMale ? "Switch to female" : "Switch to male"}
       >
         {isMale ? <MaleIcon size={20} /> : <FemaleIcon size={20} />}
       </button>
@@ -19,6 +20,7 @@ export function LevelCard() {
         className={s.button}
         onClick={() => setLevel(level - 1)}
         disabled={level === MIN_LEVEL}
+        aria-label="Decrease level"
       >
         <MinusIcon size={32} />
       </button>
@@ -27,6 +29,7 @@ export function LevelCard() {
         className={s.button}
         onClick={() => setLevel(level + 1)}
         disabled={level === MAX_LEVEL}
+        aria-label="Increase level"
       >
         <PlusIcon size={32} />
       </button>

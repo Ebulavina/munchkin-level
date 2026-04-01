@@ -21,7 +21,11 @@ export function LevelStack() {
         <LevelCard key={level.id} />
       ))}
       {levels.length < MAX_LEVELS && (
-        <button className={s.button} onClick={addLevel}>
+        <button 
+          className={s.button} 
+          onClick={addLevel} 
+          aria-label="Add level"
+        >
           <PlusIcon size={32} />
         </button>
       )}

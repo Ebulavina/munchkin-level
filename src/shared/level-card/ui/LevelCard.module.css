@@ -53,6 +53,11 @@
   background-color: var(--code-bg);
   font-size: 48px;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .gender {
