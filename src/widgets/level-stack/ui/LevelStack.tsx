@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { LevelCard } from '@shared/level-card';
 import { MIN_LEVELS, MAX_LEVELS } from '../model/constants';
 import { PlusIcon } from '@shared/icons';
 import s from './LevelStack.module.css';
 
-const createLevel = () => ({ id: crypto.randomUUID() });
+const createLevel = () => ({ id: uuidv4() });
 
 export function LevelStack() {
   const [levels, setLevels] = useState(() =>

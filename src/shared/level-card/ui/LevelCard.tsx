@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import s from './LevelCard.module.css';
 import { MIN_LEVEL, MAX_LEVEL } from '../model/constants';
-import { PlusIcon, MinusIcon, MaleIcon, FemaleIcon } from '@shared/icons';
+import { PlusIcon, MinusIcon, MaleIcon, FemaleIcon, CrownIcon } from '@shared/icons';
 import { NAMES } from '../model/names';
 
 export function LevelCard() {
@@ -28,6 +28,10 @@ export function LevelCard() {
 
   return (
     <div className={s.card}>
+      {level === MAX_LEVEL && (
+        <div className={s.crown}><CrownIcon size={32} color="gold" /></div>
+      )}
+
       <div className={s.header}>
         <span className={s.name}>{name}</span>
         <button
